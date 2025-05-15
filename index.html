@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Luck Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Card Luck Game</h1>
+<div class="game-area">
+    <p>Points: <span id="points">1000</span></p>
+    <input type="number" id="betAmount" placeholder="Enter bet" min="1" max="1000">
+    <br>
+    <button class="btn" onclick="startRound()">Start Round</button>
+    <button class="btn" onclick="drawCard()" disabled id="drawBtn">Draw Card</button>
+    <button class="btn" onclick="stand()" disabled id="standBtn">Stand</button>
+    <div>
+        <h3>Your Hand (<span id="playerTotal">0</span>):</h3>
+        <div id="playerCards" class="card-row"></div>
+    </div>
+    <div>
+        <h3>Dealer Hand (<span id="dealerTotal">0</span>):</h3>
+        <div id="dealerCards" class="card-row"></div>
+    </div>
+    <p id="message"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
