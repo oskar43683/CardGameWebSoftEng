@@ -3,27 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Luck Game</title>
+    <title>Monster Card Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Card Luck Game</h1>
-<div class="game-area">
-    <p>Points: <span id="points">1000</span></p>
-    <input type="number" id="betAmount" placeholder="Enter bet" min="1" max="1000">
-    <br>
-    <button class="btn" onclick="startRound()">Start Round</button>
-    <button class="btn" onclick="drawCard()" disabled id="drawBtn">Draw Card</button>
-    <button class="btn" onclick="stand()" disabled id="standBtn">Stand</button>
-    <div>
-        <h3>Your Hand (<span id="playerTotal">0</span>):</h3>
-        <div id="playerCards" class="card-row"></div>
+<h1>Monster Card Game</h1>
+<div class="game-container">
+    <div class="controls-area">
+        <div class="betting-section">
+            <p>Points: <span id="points">1000</span></p>
+            <label for="betAmount"></label><input type="number" id="betAmount" placeholder="Enter bet" min="1" max="1000" step="1" required>
+            <button class="btn primary-btn" onclick="startRound()">Start Round</button>
+        </div>
+        <div class="action-buttons">
+            <button class="btn action-btn" onclick="drawCard()" disabled id="drawBtn">Draw Card</button>
+            <button class="btn action-btn" onclick="stand()" disabled id="standBtn">Stand</button>
+        </div>
+        <p id="message" class="game-message"></p>
     </div>
-    <div>
-        <h3>Dealer Hand (<span id="dealerTotal">0</span>):</h3>
-        <div id="dealerCards" class="card-row"></div>
+
+    <div class="hands-area">
+        <div class="hand-container">
+            <h3>Your Hand (<span id="playerTotal">0</span>):</h3>
+            <div id="playerCards" class="card-row"></div>
+        </div>
+        <div class="hand-container">
+            <h3>Dealer Hand (<span id="dealerTotal">0</span>):</h3>
+            <div id="dealerCards" class="card-row"></div>
+        </div>
     </div>
-    <p id="message"></p>
 </div>
 
 <script src="script.js"></script>
